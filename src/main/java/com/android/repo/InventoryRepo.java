@@ -13,5 +13,11 @@ public interface InventoryRepo extends JpaRepository<Inventory, Integer>{
 	
 	@Query("SELECT i FROM Inventory i order by i.id desc")
 	public List<Inventory> getAllInventory();
+	
+	@Query("SELECT SUM(i.amount) FROM Inventory i")
+	public int getSum();
+	
+	@Query("SELECT COUNT(i) FROM Inventory i")
+	public int getCount();
 
 }

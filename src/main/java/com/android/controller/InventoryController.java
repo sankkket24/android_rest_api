@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.android.model.SumCountModel;
 import com.android.pojo.Inventory;
 import com.android.service.InventoryService;
 
@@ -23,10 +24,15 @@ public class InventoryController {
 		return service.getAllInventory();
 	}
 	
+	@GetMapping("/sumcount")
+	public SumCountModel getSumAndCount() {
+		return service.getSumAndCount();
+	}
+	
 	@PostMapping("/save_inv")
 	public void saveInventory(@RequestBody Inventory inv) {
 		service.saveInventory(inv);
 	}
-	
+		
 	
 }
