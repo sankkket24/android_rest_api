@@ -1,5 +1,6 @@
 package com.android.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -11,7 +12,12 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "inventry")
-public class Inventory {
+public class Inventory implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
